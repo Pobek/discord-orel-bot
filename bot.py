@@ -44,7 +44,6 @@ async def on_ready():
 
 @client.event
 async def on_message(message):
-  #and (message.author.id == 229212932016308226 or message.author.id == 179552191311380481)
   if message.author == client.user:
     return
 
