@@ -1,0 +1,29 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: discord-orel-bot
+  labels:
+    app: discord-orel-bot
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: discord-orel-bot
+  template:
+    metadata:
+      labels:
+        app: discord-orel-bot
+    spec:
+      containers:
+      - image: pobek/discord-orel-bot:v1
+        name: discord-orel-bot
+        env:
+        - name: DISCORD_TOKEN
+          valueFrom:
+            secretKeyRef:
+              name: discord-orel-bot-token
+              key: DISCORD_TOKEN
+        - name: DISCORD_GUILD
+          value: Playground
+        - name: TARGET_USER
+          value: username
