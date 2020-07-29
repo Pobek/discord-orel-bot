@@ -15,7 +15,7 @@ spec:
         app: discord-orel-bot
     spec:
       containers:
-      - image: pobek/discord-orel-bot:v1
+      - image: pobek/discord-orel-bot:v1.1
         name: discord-orel-bot
         resources:
           requests:
@@ -34,3 +34,11 @@ spec:
           value: Playground
         - name: TARGET_USER
           value: username
+        volumeMounts:
+        - mountPath: /app/config.yaml
+          subPath: config.yaml
+          name: config
+      volumes:
+        - name: config
+          configMap:
+            name: discord-orel-bot-cm
