@@ -17,6 +17,13 @@ spec:
       containers:
       - image: pobek/discord-orel-bot:v1
         name: discord-orel-bot
+        resources:
+          requests:
+            cpu: "20m"
+            memory: "35M"
+          limits:
+            cpu: "50m"
+            memory: "55M"
         env:
         - name: DISCORD_TOKEN
           valueFrom:
