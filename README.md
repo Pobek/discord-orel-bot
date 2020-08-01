@@ -20,11 +20,23 @@ docker run -d -e DISCORD_TOKEN={DISCORD_TOKEN} -e DISCORD_GUILD={DISCORD_SERVER}
 
 ### Kubernetes
 
-- Update `secret.yaml` file with the correct DISCORD_TOKEN.
+#### Manifests
+
+- Update `secret.yaml` file with the correct `DISCORD_TOKEN`.
 - Run `kubectl apply`:
 
 ```kubectl
 kubectl apply -f kubernetes/
+```
+
+#### Helm
+
+- Change directory to `helm/`
+- Edit the values for the configuration if you want
+- Run `helm install`:
+
+```helm
+helm install --name playground --namespace default --set secret.token=<discord-token>
 ```
 
 ### Source
