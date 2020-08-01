@@ -36,7 +36,7 @@ kubectl apply -f kubernetes/
 - Run `helm install`:
 
 ```helm
-helm install --name playground --namespace default --set secret.token=<discord-token>
+helm install --name playground --namespace default --set secret.token=<discord-token> ./discord-orel-bot
 ```
 
 ### Source
