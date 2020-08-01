@@ -1,0 +1,8 @@
+apiVersion: v1
+appVersion: v1.1
+description: A Helm2 chart for Discord-orel-bot
+name: discord-orel-bot
+version: 0.1.0
+maintainers:
+  - name: Evyatar Cohen
+    value: coevyatar@gmail.com

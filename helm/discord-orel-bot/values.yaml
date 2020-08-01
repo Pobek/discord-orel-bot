@@ -1,0 +1,56 @@
+replicaCount: 1
+
+image:
+  repository: pobek/discord-orel-bot
+  tag: v1.1
+  pullPolicy: IfNotPresent
+
+imagePullSecrets: []
+nameOverride: ""
+fullnameOverride: ""
+
+podSecurityContext: {}
+  # fsGroup: 2000
+
+securityContext: {}
+  # capabilities:
+  #   drop:
+  #   - ALL
+  # readOnlyRootFilesystem: true
+  # runAsNonRoot: true
+  # runAsUser: 1000
+  
+resources: 
+  requests:
+    cpu: "20m"
+    memory: "35M"
+  limits:
+    cpu: "50m"
+    memory: "55M"
+
+env:
+  - name: DISCORD_GUILD
+    value: Playground
+  - name: TARGET_USER
+    value: username
+
+secret:
+  token: <discord-token>
+
+config:
+  en:
+    curses:
+      - shut up
+    answers:
+      - Lame.
+  he:
+    curses:
+      - שתוק
+    answers:
+      - תשמע, אתה גרוע
+
+nodeSelector: {}
+
+tolerations: []
+
+affinity: {}
