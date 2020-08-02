@@ -53,7 +53,7 @@ async def on_message(message):
 
   username = client.get_user(message.author.id)
   if TARGET_USER.lower() in username.name.lower():
-    if any(curse in message.content for curse in config.CURSES_EN):
+    if any(curse.lower() in message.content.lower() for curse in config.CURSES_EN):
       response = random.choice(config.ANSWERS_EN)
       await message.channel.send(f'{username.mention} - {response}')
     elif any(curse in message.content for curse in config.CURSES_HE):
