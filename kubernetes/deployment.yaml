@@ -15,7 +15,7 @@ spec:
         app: discord-orel-bot
     spec:
       containers:
-      - image: pobek/discord-orel-bot:v1.1
+      - image: pobek/discord-orel-bot:v1.2
         name: discord-orel-bot
         resources:
           requests:
